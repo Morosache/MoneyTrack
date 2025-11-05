@@ -37,7 +37,7 @@ function onInput(index, event) {
 
         <GenericButton title="Validate code" />
 
-        <a href="#" class=" font-medium text-[12px]">Did not recieve the code? Send again.</a>
+        <router-link to='login' class=" font-medium text-[12px]">Did not recieve the code? Send again.</router-link>
 
     </div>
 
