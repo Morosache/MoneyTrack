@@ -6,7 +6,7 @@ import EnterCode from './pages/EnterCode.vue';
 </script>
 
 <template>
-<EnterCode />
+<router-view />
 </template>
 
 <style scoped>

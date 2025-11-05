@@ -19,16 +19,16 @@ function onInput(index, event) {
     }
 }
 
-// const validateCode = () => {
-// }
 </script>
 
 <template>
-    <GoBackButton />
+    <GoBackButton to="/login" title="Go Back to Log In" />
     <div class="flex flex-col justify-center items-center mt-[150px] h-full w-full ">
+
         <div class="mb-[15px]">
             <h1 class="text-[40px] font-semibold">Enter the code</h1>
         </div>
+
         <div class="flex gap-2">
             <input v-for="(c, i) in code" :key="i" :id="`code-${i}`" type="text" maxlength="1"
                 class="w-12 h-12 text-center border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
