@@ -29,7 +29,7 @@ function onInput(index, event) {
 
 const validateCode = () => {
     if (code.value.join('') === hardCode.join('')) {
-        router.push({ name: 'reset-succesful' })
+        router.push({ name: 'reset-password' })
     } else {
         alert("invalid code")
     }
