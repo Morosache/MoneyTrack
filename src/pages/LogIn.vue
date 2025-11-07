@@ -51,8 +51,8 @@ const handleLogIn = () => {
             </div>
 
             <div class="flex justify-between mt-[5px]">
-                <router-link to="register" class="text-[12px] font-medium">New user? Create an account</router-link>
-                <router-link to="forgot-your-password" class="text-[12px] font-medium">Forgot yor Password? Reset it</router-link>
+                <router-link to="register" class="text-[12px] font-medium">New user? Sign Up.</router-link>
+                <router-link to="forgot-your-password" class="text-[12px] font-medium">Forgot your Password? Reset it.</router-link>
             </div>
 
             <GenericButton title="Log In" />

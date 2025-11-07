@@ -31,7 +31,7 @@ const handleLogIn = () => {
 
 <template>
     <div class="flex flex-col items-center mt-[150px] h-full w-full ">
-        <h1 class="text-[40px] font-semibold mb-[20px]">Register New User</h1>
+        <h1 class="text-[40px] font-semibold mb-[20px]">Sign Up</h1>
         <form @submit.prevent="handleLogIn" class="flex flex-col">
 
             <div>
@@ -58,7 +58,7 @@ const handleLogIn = () => {
                 <router-link to="login" class="text-[12px] font-medium">Already have an account? Log in</router-link>
             </div>
 
-            <GenericButton title="Register" />
+            <GenericButton title="Sign Up" />
 
         </form>
 
