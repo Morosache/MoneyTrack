@@ -1,4 +1,4 @@
-import {createRouter, createWebHashHistory} from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 
 import LogIn from '../pages/LogIn.vue'
 import Register from '../pages/Register.vue'
@@ -6,6 +6,7 @@ import ForgotYourPassword from '../pages/ForgotYourPassword.vue'
 import EnterCode from '../pages/EnterCode.vue'
 
 const routes = [
+        {path:'/', redirect:'/login'},
         {path: '/login', name: 'login', component: LogIn },
         {path:'/register', name:'register', component: Register},
         {path:'/forgot-your-password', name:'forgot-password', component: ForgotYourPassword},
@@ -14,7 +15,7 @@ const routes = [
     ]
 
     const router = createRouter({
-        history: createWebHashHistory(),
+        history: createWebHistory(),
         routes
     })
 

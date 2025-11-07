@@ -51,7 +51,7 @@ const handleLogIn = () => {
 
             <div>
                 <label for="confirmPassword" class="block font-medium mb-2">Confirm your password</label>
-                <PasswordInput placeholder="Confrim Password" v-model="confirmPassword" />
+                <PasswordInput placeholder="Confirm Password" id="confirmPassword" v-model="confirmPassword" />
             </div>
 
             <div class="flex justify-end mt-[5px]">
