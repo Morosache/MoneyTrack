@@ -1,10 +1,16 @@
 <script setup>
 import GenericButton from '@/components/GenericButton.vue';
 import GoBackButton from '@/components/GoBackButton.vue';
-import { ref, nextTick } from 'vue'
+import PageTitle from '@/components/PageTitle.vue';
 
-const hardCode = ['0','0','0','0','0','0']
+import { ref, nextTick } from 'vue'
+import { useRouter } from 'vue-router'
+
+
+const hardCode = ['0', '0', '0', '0', '0', '0']
 const code = ref(['', '', '', '', '', ''])
+
+const router = useRouter();
 
 
 function onInput(index, event) {
@@ -22,8 +28,8 @@ function onInput(index, event) {
 }
 
 const validateCode = () => {
-    if(code.value.join('') === hardCode.join('')){
-        alert("Valid code")
+    if (code.value.join('') === hardCode.join('')) {
+        router.push({ name: 'reset-succesful' })
     } else {
         alert("invalid code")
     }
@@ -36,17 +42,16 @@ const validateCode = () => {
     <div class="flex flex-col justify-center items-center mt-[150px] h-full w-full ">
 
         <div class="mb-[15px]">
-            <h1 class="text-[40px] font-semibold">Enter the code</h1>
+            <PageTitle title="Enter Code" />
         </div>
 
         <div class="flex gap-2">
             <input v-for="(c, i) in code" :key="i" :id="`code-${i}`" type="text" maxlength="1"
-                class="w-12 h-12 text-center border border-gray-300 rounded"
-                :value="c" @input="onInput(i, $event)" />
+                class="w-12 h-12 text-center border border-gray-300 rounded" :value="c" @input="onInput(i, $event)" />
         </div>
 
         <form @submit.prevent='validateCode'>
-        <GenericButton title="Validate code" />
+            <GenericButton title="Validate code" />
         </form>
         <router-link to='login' class=" font-medium text-[12px]">Did not recieve the code? Send again.</router-link>
 

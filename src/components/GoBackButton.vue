@@ -4,9 +4,9 @@ defineProps({
         type: String,
         required: true
     },
-    
+
     to: {
-        type:String,
+        type: String,
         required: true
     }
 

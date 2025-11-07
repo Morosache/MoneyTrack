@@ -5,6 +5,7 @@ import { useRouter } from 'vue-router'
 import GenericButton from '@/components/GenericButton.vue';
 import PasswordInput from '@/components/PasswordInput.vue';
 import EmailInput from '@/components/EmailInput.vue';
+import PageTitle from '@/components/PageTitle.vue';
 
 
 const email = ref('')
@@ -31,7 +32,7 @@ const handleLogIn = () => {
 
 <template>
     <div class="flex flex-col items-center mt-[150px] h-full w-full ">
-        <h1 class="text-[40px] font-semibold mb-[20px]">Sign Up</h1>
+        <PageTitle title="Sign Up" />
         <form @submit.prevent="handleLogIn" class="flex flex-col">
 
             <div>
