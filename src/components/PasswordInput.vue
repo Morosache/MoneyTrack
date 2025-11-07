@@ -1,11 +1,9 @@
 <script setup>
 import { ref, watch } from 'vue'
 
+const password = defineModel()
+
 const props = defineProps({
-  modelValue: {
-    type: String,
-    required: true
-  },
   placeholder: {
     type: String,
     default: 'Password'
@@ -20,17 +18,7 @@ const props = defineProps({
   }
 })
 
-const emit = defineEmits(['update:modelValue'])
 const showPassword = ref(false)
-const internalValue = ref(props.modelValue)
-
-watch(() => props.modelValue, (val) => {
-  internalValue.value = val
-})
-
-watch(internalValue, (val) => {
-  emit('update:modelValue', val)
-})
 </script>
 
 <template>
@@ -40,7 +28,7 @@ watch(internalValue, (val) => {
       :type="showPassword ? 'text' : 'password'"
       :placeholder="placeholder"
       :class="className"
-      v-model="internalValue"
+      v-model="password"
     />
     <button
       type="button"

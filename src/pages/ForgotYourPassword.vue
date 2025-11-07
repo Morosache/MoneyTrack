@@ -1,13 +1,23 @@
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
 import GoBackButton from '@/components/GoBackButton.vue';
 import GenericButton from '@/components/GenericButton.vue';
 import EmailInput from '@/components/EmailInput.vue';
 
-const email = '';
+const email = ref('');
+const errorMessage = ref('')
+
+const router = useRouter();
+
 
 const handleClick = () => {
-    alert('code sent')
+    if(!email.value){
+        errorMessage.value = "Email cannot be empty"
+    } else {
+        errorMessage.value = ''
+        router.push({ name: 'enter-code'})
+    }
 }
 </script>
 
@@ -21,8 +31,13 @@ const handleClick = () => {
         <form @submit.prevent='handleClick' class="flex flex-col">
 
             <div>
+                <div class="flex justify-between">
                 <label for="email" class="block font-medium mb-2">Enter your email</label>
-                <EmailInput />
+                <div v-if="errorMessage" class="text-[12px] text-red-500 ">
+                        {{ errorMessage }}
+                    </div>
+                </div>
+                <EmailInput v-model="email"/>
             </div>
             
             <p class="text-[12px] ml-[2px] ">We will send you a code to reset your password.</p>
@@ -30,6 +45,6 @@ const handleClick = () => {
 
         </form>
 
-    </div>
+    </div> 
 
 </template>
