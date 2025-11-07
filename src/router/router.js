@@ -6,7 +6,7 @@ import ForgotYourPassword from '../pages/ForgotYourPassword.vue'
 import EnterCode from '../pages/EnterCode.vue'
 import ResetPassword from '@/pages/ResetPassword.vue'
 import ResetSuccesful from '@/pages/ResetSuccesful.vue'
-
+import HomePage from '@/pages/HomePage.vue'
 const routes = [
         {path:'/', redirect:'/login'},
         {path: '/login', name:'login', component: LogIn },
@@ -15,6 +15,7 @@ const routes = [
         {path:'/enter-code', name:'enter-code', component: EnterCode},
         {path:'/reset-password', name:'reset-password', component: ResetPassword},
         {path:'/reset-succesful', name:'reset-succesful', component: ResetSuccesful},
+        {path:'/home-page', name:'home-page', component: HomePage},
         { path: '/:pathMatch(.*)*', redirect: '/login' }
     ]
 

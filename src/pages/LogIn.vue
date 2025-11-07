@@ -10,15 +10,22 @@ const email = ref('')
 const password = ref('')
 const errorMessage = ref('')
 
-const hardEmail = 'elisei.morosan@emanuel.ro'
-const hardPass = 'salut'
-
 const router = useRouter();
+
+const hardEmail = 'elisei.morosan@emanuel.ro'
+
+if(!localStorage.getItem('password')) {
+    localStorage.setItem('password', 'salut')
+}
+
+const getPassword = () => localStorage.getItem('password')
+
+
 
 
 const handleLogIn = () => {
-    if (email.value === hardEmail && password.value === hardPass) {
-        router.push({ name: 'register' })
+    if (email.value === hardEmail && password.value === getPassword()) {
+        router.push({ name: 'home-page' })
     } else if (!email.value || !password.value) {
         errorMessage.value = 'Email and password cannot be empty'
     }

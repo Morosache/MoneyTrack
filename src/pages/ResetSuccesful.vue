@@ -12,7 +12,7 @@ const returnToLog = () => {
 
 <template>
     <div class="w-screen h-screen flex flex-col justify-center items-center">
-        <PageTitle title="The Password has been reset" />
+        <PageTitle title="Password has been reset" />
         <GenericButton @click="returnToLog" title="Go back to Log In" />
     </div>
 </template>

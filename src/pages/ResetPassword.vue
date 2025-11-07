@@ -13,9 +13,16 @@ const errorMessage = ref('')
 const router = useRouter();
 
 const handleReset = () => {
-    if (newPassword.value === confirmNewPassword.value && newPassword.value !== '' && confirmNewPassword.value !== '') router.push({ name: 'reset-succesful' })
-    else if (!newPassword.value || !confirmNewPassword.value) errorMessage.value = 'Password field cannnot be empty'
-    else errorMessage.value = 'Passwords not matching'
+    if (!newPassword.value || !confirmNewPassword.value) {
+    errorMessage.value = 'Password field cannot be empty'
+    return
+  }
+  if (newPassword.value !== confirmNewPassword.value) {
+    errorMessage.value = 'Passwords not matching'
+    return
+  }
+  localStorage.setItem('password', newPassword.value)
+  router.push({ name: 'reset-succesful' })
 }
 </script>
 
