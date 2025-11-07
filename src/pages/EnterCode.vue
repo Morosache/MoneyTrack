@@ -3,7 +3,9 @@ import GenericButton from '@/components/GenericButton.vue';
 import GoBackButton from '@/components/GoBackButton.vue';
 import { ref, nextTick } from 'vue'
 
+const hardCode = ['0','0','0','0','0','0']
 const code = ref(['', '', '', '', '', ''])
+
 
 function onInput(index, event) {
     const val = event.target.value
@@ -19,6 +21,14 @@ function onInput(index, event) {
     }
 }
 
+const validateCode = () => {
+    if(code.value.join('') === hardCode.join('')){
+        alert("Valid code")
+    } else {
+        alert("invalid code")
+    }
+}
+
 </script>
 
 <template>
@@ -31,12 +41,13 @@ function onInput(index, event) {
 
         <div class="flex gap-2">
             <input v-for="(c, i) in code" :key="i" :id="`code-${i}`" type="text" maxlength="1"
-                class="w-12 h-12 text-center border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500"
+                class="w-12 h-12 text-center border border-gray-300 rounded"
                 :value="c" @input="onInput(i, $event)" />
         </div>
 
+        <form @submit.prevent='validateCode'>
         <GenericButton title="Validate code" />
-
+        </form>
         <router-link to='login' class=" font-medium text-[12px]">Did not recieve the code? Send again.</router-link>
 
     </div>
