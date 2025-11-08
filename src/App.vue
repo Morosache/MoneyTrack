@@ -6,8 +6,9 @@ const route = useRoute()
 
 <template>
  <div class="flex">
+
     <SideMenu v-if="!['/','/login','/reset-password', '/reset-succesful', '/register', '/enter-code', '/forgot-your-password'].includes(route.path)" />
-    <router-view />
+    <router-view/>
   </div>
 </template>
 

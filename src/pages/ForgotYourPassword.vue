@@ -23,29 +23,30 @@ const handleClick = () => {
 </script>
 
 <template>
-    <GoBackButton to="/login" title="Go back to Log In" />
-
-    <div class="flex flex-col justify-center items-center mt-[150px] h-full w-full ">
-        <div class="mb-[15px]">
-            <PageTitle title="Forgot Your Password?" />
-        </div>
-        <form @submit.prevent='handleClick' class="flex flex-col">
-
-            <div>
-                <div class="flex justify-between">
-                    <label for="email" class="block font-medium mb-2">Enter your email</label>
-                    <div v-if="errorMessage" class="text-[12px] text-red-500 ">
-                        {{ errorMessage }}
-                    </div>
-                </div>
-                <EmailInput v-model="email" />
+    <div class="w-screen h-screen flex flex-col">
+        <GoBackButton to="/login" title="Go back to Log In" />
+        <div class="flex flex-col justify-center items-center mb-[150px] w-full h-full ">
+            <div class="mb-[15px]">
+                <PageTitle title="Forgot Your Password?" />
             </div>
+            <form @submit.prevent='handleClick' class="flex flex-col">
 
-            <p class="text-[12px] ml-[2px] ">We will send you a code to reset your password.</p>
-            <GenericButton title="Send Code" />
+                <div>
+                    <div class="flex justify-between">
+                        <label for="email" class="block font-medium mb-2">Enter your email</label>
+                        <div v-if="errorMessage" class="text-[12px] text-red-500 ">
+                            {{ errorMessage }}
+                        </div>
+                    </div>
+                    <EmailInput v-model="email" />
+                </div>
 
-        </form>
+                <p class="text-[12px] ml-[2px] ">We will send you a code to reset your password.</p>
+                <GenericButton title="Send Code" />
 
+            </form>
+
+        </div>
     </div>
 
 </template>
