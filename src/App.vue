@@ -1,12 +1,14 @@
 <script setup>
-import LogIn from './pages/LogIn.vue'
-import Register from'./pages/Register.vue'
-import ForgotYourPassword from './pages/ForgotYourPassword.vue';
-import EnterCode from './pages/EnterCode.vue';
+import SideMenu from './components/SideMenu.vue';
+import { useRoute } from 'vue-router'
+const route = useRoute()
 </script>
 
 <template>
-<router-view />
+ <div class="flex">
+    <SideMenu v-if="!['/','/login','/reset-password', '/reset-succesful', '/register', '/enter-code', '/forgot-your-password'].includes(route.path)" />
+    <router-view />
+  </div>
 </template>
 
 <style scoped>
