@@ -72,7 +72,7 @@ import { Settings } from 'lucide-vue-next'
 
 
 .active {
-    background-color: #F0F0F0;
+    background-color: #e7ffef;
     color: #56D788;
     border-radius: 10px;
 }
