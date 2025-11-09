@@ -3,9 +3,9 @@ import { History } from 'lucide-vue-next';
 import TransactionCard from './TransactionCard.vue';
 
 const cards = [
-    { title: 'Ciocolata', category: 'Mancare', date: new Date(), price: '2,99' },
-    { title: 'Papuci', category: 'Haine', date: new Date(), price: '120,99' },
-    { title: 'Pasta de dinti', category: 'Igiena', date: new Date(), price: '4,29' },
+    { title: 'Ciocolata', category: 'Mancare', date: new Date(), price: 2.99 },
+    { title: 'Papuci', category: 'Haine', date: new Date(), price: 120.99 },
+    { title: 'Pasta de dinti', category: 'Igiena', date: new Date(), price: 4.29 },
 
 ]
 

@@ -2,10 +2,10 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import GenericButton from '@/components/GenericButton.vue';
-import PasswordInput from '@/components/PasswordInput.vue';
-import EmailInput from '@/components/EmailInput.vue';
-import PageTitle from '@/components/PageTitle.vue';
+import GenericButton from '@/components/buttons/GenericButton.vue';
+import PasswordInput from '@/components/auth/PasswordInput.vue';
+import EmailInput from '@/components/auth/EmailInput.vue';
+import PageTitle from '@/components/auth/PageTitle.vue';
 
 
 const email = ref('')

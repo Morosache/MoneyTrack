@@ -1,7 +1,7 @@
 <script setup>
-import GenericButton from '@/components/GenericButton.vue';
-import GoBackButton from '@/components/GoBackButton.vue';
-import PageTitle from '@/components/PageTitle.vue';
+import GenericButton from '@/components/buttons/GenericButton.vue';
+import GoBackButton from '@/components/auth/GoBackButton.vue';
+import PageTitle from '@/components/auth/PageTitle.vue';
 
 import { ref, nextTick } from 'vue'
 import { useRouter } from 'vue-router'

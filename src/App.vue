@@ -1,5 +1,5 @@
 <script setup>
-import SideMenu from './components/SideMenu.vue';
+import SideMenu from './components/home-page/SideMenu.vue';
 import { useRoute } from 'vue-router'
 const route = useRoute()
 </script>

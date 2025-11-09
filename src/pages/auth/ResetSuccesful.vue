@@ -1,7 +1,7 @@
 <script setup>
 import { useRouter } from 'vue-router'
-import GenericButton from '@/components/GenericButton.vue';
-import PageTitle from '@/components/PageTitle.vue';
+import GenericButton from '@/components/buttons/GenericButton.vue';
+import PageTitle from '@/components/auth/PageTitle.vue';
 
 const router = useRouter()
 const returnToLog = () => {

@@ -2,9 +2,9 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
-import GenericButton from '@/components/GenericButton.vue';
-import PasswordInput from '@/components/PasswordInput.vue';
-import PageTitle from '@/components/PageTitle.vue';
+import GenericButton from '@/components/buttons/GenericButton.vue';
+import PasswordInput from '@/components/auth/PasswordInput.vue';
+import PageTitle from '@/components/auth/PageTitle.vue';
 
 const newPassword = ref('')
 const confirmNewPassword = ref('')

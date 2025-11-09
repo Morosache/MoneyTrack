@@ -1,4 +1,6 @@
 <script setup>
+import RouterLinkButton from '../buttons/RouterLinkButton.vue';
+
 
 </script>
 
@@ -6,12 +8,7 @@
     <div class="bg-white w-[550px] h-[275px] ml-[200px]  rounded-[10px]" id="new-transaction">
         <div class="flex justify-center items-center flex-col gap-5 h-full">
             <h1 class="text-[25px] font-medium ">Register new transaction</h1>
-            <router-link to="/transactions-page"
-                class="px-[20px] py-[3px] text-[16px] bg-[#56D788] rounded-[10px] font-semibold hover:bg-[#4cc179] cursor-pointer">New
-                transaction
-            </router-link>
-
-
+            <RouterLinkButton to="/transactions-page" title="Register new transaction" />
         </div>
     </div>
 

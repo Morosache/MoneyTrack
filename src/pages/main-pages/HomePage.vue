@@ -1,9 +1,9 @@
 <script setup>
-import LatestTransactionsCard from '@/components/LatestTransactionsCard.vue';
-import NewTransactionCard from '@/components/NewTransactionCard.vue';
-import SideMenu from '@/components/SideMenu.vue';
-import StatisticsCard from '@/components/StatisticsCard.vue';
-import TopHomeBar from '@/components/TopHomeBar.vue';
+import LatestTransactionsCard from '@/components/home-page/LatestTransactionsCard.vue';
+import NewTransactionCard from '@/components/home-page/NewTransactionCard.vue';
+import SideMenu from '@/components/home-page/SideMenu.vue';
+import StatisticsCard from '@/components/home-page/StatisticsCard.vue';
+import TopHomeBar from '@/components/home-page/TopHomeBar.vue';
 
 
 </script>

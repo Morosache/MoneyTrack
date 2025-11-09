@@ -1,16 +1,16 @@
 import {createRouter, createWebHashHistory} from 'vue-router'
 
-import LogIn from '../pages/LogIn.vue'
-import Register from '../pages/Register.vue'
-import ForgotYourPassword from '../pages/ForgotYourPassword.vue'
-import EnterCode from '../pages/EnterCode.vue'
-import ResetPassword from '@/pages/ResetPassword.vue'
-import ResetSuccesful from '@/pages/ResetSuccesful.vue'
-import HomePage from '@/pages/HomePage.vue'
-import BudgetPage from '@/pages/BudgetPage.vue'
-import TransactionsPage from '@/pages/TransactionsPage.vue'
-import StatisticsPage from '@/pages/StatisticsPage.vue'
-import SettingsPage from '@/pages/SettingsPage.vue'
+import LogIn from '../pages/auth/LogIn.vue'
+import Register from '../pages/auth/Register.vue'
+import ForgotYourPassword from '../pages/auth/ForgotYourPassword.vue'
+import EnterCode from '../pages/auth/EnterCode.vue'
+import ResetPassword from '@/pages/auth/ResetPassword.vue'
+import ResetSuccesful from '@/pages/auth/ResetSuccesful.vue'
+import HomePage from '@/pages/main-pages/HomePage.vue'
+import BudgetPage from '@/pages/main-pages/BudgetPage.vue'
+import TransactionsPage from '@/pages/main-pages/TransactionsPage.vue'
+import StatisticsPage from '@/pages/main-pages/StatisticsPage.vue'
+import SettingsPage from '@/pages/main-pages/SettingsPage.vue'
 
 
 const routes = [

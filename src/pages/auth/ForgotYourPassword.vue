@@ -1,10 +1,10 @@
 <script setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
-import GoBackButton from '@/components/GoBackButton.vue';
-import GenericButton from '@/components/GenericButton.vue';
-import EmailInput from '@/components/EmailInput.vue';
-import PageTitle from '@/components/PageTitle.vue';
+import GoBackButton from '@/components/auth/GoBackButton.vue';
+import GenericButton from '@/components/buttons/GenericButton.vue';
+import EmailInput from '@/components/auth/EmailInput.vue';
+import PageTitle from '@/components/auth/PageTitle.vue';
 
 const email = ref('');
 const errorMessage = ref('')
