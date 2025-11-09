@@ -9,7 +9,7 @@ const budget = ref('$0,00');
 </script>
 
 <template>
-    <div class="flex-1 ml-[200px] p-[30px] h-[100px] bg-[#FFFFFF]" id="top-bar">
+    <div class="ml-[200px] p-[30px] h-[100px] bg-[#FFFFFF]" id="top-bar">
         <div class="flex justify-between items-center mx-[20px]">
             <div class="flex flex-row gap-1">
                 <Wallet />
