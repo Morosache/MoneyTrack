@@ -1,8 +1,22 @@
 <script setup>
-import SideMenu from '@/components/home-page/SideMenu.vue';
+import AddBudgetCard from '@/components/budget-page/AddBudgetCard.vue';
+import BudgetStatisticsCard from '@/components/budget-page/BudgetStatisticsCard.vue';
+import LatestBudgetCard from '@/components/budget-page/LatestBudgetCard.vue';
+import TopHomeBar from '@/components/home-page/TopHomeBar.vue';
 
 
 </script>
 
 <template>
+    <div class="bg-[#F6F6F6] flex flex-col w-full h-screen">
+                <TopHomeBar />
+            <div class="flex flex-row ml-[185px] justify-center items-center flex-wrap mb-[50px] mt-[10px]">
+                <div class=" flex flex-col justify-between items-center">
+                <AddBudgetCard />
+                <LatestBudgetCard />
+                </div>
+                <BudgetStatisticsCard />
+            </div>
+
+    </div>
 </template>

@@ -5,7 +5,7 @@ import RouterLinkButton from '../buttons/RouterLinkButton.vue';
 </script>
 
 <template>
-    <div class="bg-white w-[1200px] h-[300px] ml-[200px] rounded-[10px] flex flex-col p-[20px] "
+    <div class="bg-white w-[1300px] h-[300px] rounded-[10px] flex flex-col p-[20px] "
         id="statistics-card">
         <div class="flex flex-row justify-between items-center flex-1 overflow-hidden">
             <div class="w-1/2 h-full flex justify-center items-center overflow-hidden">

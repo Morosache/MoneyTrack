@@ -5,7 +5,7 @@ import RouterLinkButton from '../buttons/RouterLinkButton.vue';
 </script>
 
 <template>
-    <div class="bg-white w-[550px] h-[275px] ml-[200px]  rounded-[10px]" id="new-transaction">
+    <div class="bg-white w-[650px] h-[275px] rounded-[10px]" id="new-transaction">
         <div class="flex justify-center items-center flex-col gap-5 h-full">
             <h1 class="text-[25px] font-medium ">Register new transaction</h1>
             <RouterLinkButton to="/transactions-page" title="Register new transaction" />
