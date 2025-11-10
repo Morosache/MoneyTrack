@@ -10,7 +10,7 @@ import TopHomeBar from '@/components/home-page/TopHomeBar.vue';
 <template>
     <div class="bg-[#F6F6F6] flex flex-col w-full h-screen">
                 <TopHomeBar />
-            <div class="flex flex-row ml-[185px] justify-center items-center flex-wrap mb-[50px] mt-[10px]">
+            <div class="flex flex-row ml-[185px] justify-center items-center flex-wrap mb-[40px] mt-[10px]">
                 <div class=" flex flex-col justify-between items-center">
                 <AddBudgetCard />
                 <LatestBudgetCard />
