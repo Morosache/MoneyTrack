@@ -2,9 +2,7 @@
 defineProps({
     to: {
         type: String,
-        required: true
     }
-
 })
 import { ChevronLeft } from 'lucide-vue-next';
 </script>

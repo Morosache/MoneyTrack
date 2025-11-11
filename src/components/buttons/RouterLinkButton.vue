@@ -1,14 +1,14 @@
 <script setup>
-defineProps(
-    ['title'],
-    ['route']
-)
+defineProps({
+    title:String,
+    to:String
+})
 
 </script>
 
 <template>
     <div v-if="$route.path === '/home-page'">
-     <router-link to="{{ route }}"
+     <router-link :to=" to "
                 class="px-[20px] py-[3px] text-[16px] bg-[#56D788] rounded-[10px] font-semibold hover:bg-[#4cc179] cursor-pointer">{{ title }}
             </router-link>
     </div>        
