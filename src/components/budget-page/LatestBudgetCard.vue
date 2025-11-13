@@ -17,7 +17,7 @@ defineProps({
                 <div class="grid grid-cols-5 border-b border-t border-gray-300 p-3 text-center items-center">
                     <p class="text-[14px] font-semibold"> Source </p>
                     <p class="text-[14px] font-semibold">Amount</p>
-                    <p class="text-[14px] font-semibold">Category</p>
+                    <p class="text-[14px] font-semibold">Account</p>
                     <p class="text-[14px] font-semibold">Observations</p>
                 </div>
                 <div v-for="income in incomes" :key="income.id"
@@ -26,7 +26,7 @@ defineProps({
                     <p class="font-semibold">${{ income.amount }}</p>
                     <p>{{ income.category }}</p>
                     <p>{{ income.observations }}</p>
-                    <Pencil  class="w-[15px] h-[15px] justify-self-end mr-[20px]"/>
+                    <Pencil class="w-[15px] h-[15px] justify-self-end mr-[20px]" />
 
                 </div>
             </div>
@@ -47,4 +47,5 @@ defineProps({
 #latest-budget-card {
     border: 1px solid rgb(219, 216, 216);
 }
+
 </style>

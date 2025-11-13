@@ -3,9 +3,9 @@ import { History } from 'lucide-vue-next';
 import TransactionCard from './TransactionCard.vue';
 
 const cards = [
-    { title: 'Ciocolata', category: 'Mancare', date: new Date(), price: 2.99 },
-    { title: 'Papuci', category: 'Haine', date: new Date(), price: 120.99 },
-    { title: 'Pasta de dinti', category: 'Igiena', date: new Date(), price: 4.29 },
+    { title: 'Ciocolata', category: 'Mancare', date: new Date(), price: 2.99, wish: 'Wish' },
+    { title: 'Papuci', category: 'Haine', date: new Date(), price: 120.99, wish: 'Need'},
+    { title: 'Pasta de dinti', category: 'Igiena', date: new Date(), price: 4.29, wish: 'Need'},
 
 ]
 
@@ -21,17 +21,18 @@ const cards = [
             </router-link>
         </div>
 
-        <div class="grid grid-cols-5 px-8 py-2 gap-3">
+        <div class="grid grid-cols-6 px-8 py-2 gap-3">
                 <p>Date</p>
                 <p>Name</p>
                 <p>Price</p>
                 <p>Category</p>
+                <p>Need/Wish</p>
         </div>
 
 
             <div class="flex flex-col " >
                 <TransactionCard v-for="(card, index) in cards" :key="index" :title="card.title"
-                    :category="card.category" :date="card.date" :price="card.price" />
+                    :category="card.category" :date="card.date" :price="card.price" :wish="card.wish" />
             </div>
     </div>
 </template>
