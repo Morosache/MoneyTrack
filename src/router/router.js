@@ -26,7 +26,7 @@ const routes = [
         {path:'/transactions-page', name:'transactions-page', component: TransactionsPage},
         {path:'/statistics-page', name:'statistics-page', component: StatisticsPage},
         {path:'/settings-page', name:'settings-page', component: SettingsPage},
-        { path: '/:pathMatch(.*)*', redirect: '/login' }
+        { path: '/:pathMatch(.*)*', redirect: '/home-page' }
     ]
 
     const router = createRouter({
