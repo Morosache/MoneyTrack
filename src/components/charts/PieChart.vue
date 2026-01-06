@@ -32,6 +32,9 @@ export default {
 </script>
 
 <template>
-    <Pie id="pie-chart" :options="chartOptions" :data="chartData" />
-
+  <Pie
+    id="pie-chart"
+    :options="chartOptions"
+    :data="chartData"
+  />
 </template>

@@ -5,21 +5,25 @@ import RouterLinkButton from '../buttons/RouterLinkButton.vue';
 </script>
 
 <template>
-    <div class="bg-white w-[1300px] h-[300px] rounded-[10px] flex flex-col p-[20px] "
-        id="statistics-card">
-        <div class="flex flex-row justify-between items-center flex-1 overflow-hidden">
-            <div class="w-1/2 h-full flex justify-center items-center overflow-hidden">
-                <BarChart />
-            </div>
-            <div class="w-1/2 h-full flex justify-center items-center overflow-hidden">
-                <PieChart />
-            </div>
-        </div>
-        <div class="flex justify-center mt-4">
-            <RouterLinkButton to="/statistics-page" title="See other statistics" />
-        </div>
+  <div
+    id="statistics-card"
+    class="bg-white w-[1300px] h-[300px] rounded-[10px] flex flex-col p-[20px] "
+  >
+    <div class="flex flex-row justify-between items-center flex-1 overflow-hidden">
+      <div class="w-1/2 h-full flex justify-center items-center overflow-hidden">
+        <BarChart />
+      </div>
+      <div class="w-1/2 h-full flex justify-center items-center overflow-hidden">
+        <PieChart />
+      </div>
     </div>
-
+    <div class="flex justify-center mt-4">
+      <RouterLinkButton
+        to="/statistics-page"
+        title="See other statistics"
+      />
+    </div>
+  </div>
 </template>
 
 <style scoped>

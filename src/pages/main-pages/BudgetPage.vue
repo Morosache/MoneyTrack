@@ -13,15 +13,14 @@ function handleSubmit(data) {
 </script>
 
 <template>
-    <div class="bg-[#F6F6F6] flex flex-col w-full h-screen">
-                <TopHomeBar />
-            <div class="flex flex-row ml-[185px] justify-center items-center flex-wrap mt-[10px]">
-                <div class=" flex flex-col justify-between items-center">
-                <AddBudgetCard @submitForm="handleSubmit"/>
-                <LatestBudgetCard :incomes="incomes"/>
-                </div>
-                <BudgetStatisticsCard />
-            </div>
-
+  <div class="bg-[#F6F6F6] flex flex-col w-full h-screen">
+    <TopHomeBar />
+    <div class="flex flex-row ml-[185px] justify-center items-center flex-wrap mt-[10px]">
+      <div class=" flex flex-col justify-between items-center">
+        <AddBudgetCard @submit-form="handleSubmit" />
+        <LatestBudgetCard :incomes="incomes" />
+      </div>
+      <BudgetStatisticsCard />
     </div>
+  </div>
 </template>

@@ -8,16 +8,14 @@ import TopHomeBar from '@/components/home-page/TopHomeBar.vue';
 </script>
 
 <template>
-    <div class="flex flex-col w-full h-screen bg-[#F6F6F6]">
-        <TopHomeBar />
-        <div class="flex justify-center items-center flex-wrap ml-[200px] mb-[50px]">
-            <div class=" flex flex-row gap-25 justify-between items-center mx-[40px] my-[40px]">
-            <NewTransactionCard />
-            <LatestTransactionsCard />
-
-            </div>
-            <StatisticsCard />
-        </div>
+  <div class="flex flex-col w-full h-screen bg-[#F6F6F6]">
+    <TopHomeBar />
+    <div class="flex justify-center items-center flex-wrap ml-[200px] mb-[50px]">
+      <div class=" flex flex-row gap-25 justify-between items-center mx-[40px] my-[40px]">
+        <NewTransactionCard />
+        <LatestTransactionsCard />
+      </div>
+      <StatisticsCard />
     </div>
-
+  </div>
 </template>

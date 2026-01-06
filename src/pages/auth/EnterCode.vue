@@ -38,27 +38,38 @@ const validateCode = () => {
 </script>
 
 <template>
-    <div class="w-screen h-screen flex flex-col">
-        <GoBackButton to="/login" title="Go Back to Log In" />
-        <div class="flex flex-col justify-center items-center mb-[150px] h-full w-full ">
+  <div class="w-screen h-screen flex flex-col">
+    <GoBackButton
+      to="/login"
+      title="Go Back to Log In"
+    />
+    <div class="flex flex-col justify-center items-center mb-[150px] h-full w-full ">
+      <div class="mb-[15px]">
+        <PageTitle title="Enter Code" />
+      </div>
 
-            <div class="mb-[15px]">
-                <PageTitle title="Enter Code" />
-            </div>
+      <div class="flex gap-2">
+        <input
+          v-for="(c, i) in code"
+          :id="`code-${i}`"
+          :key="i"
+          type="text"
+          maxlength="1"
+          class="w-12 h-12 text-center border border-gray-300 rounded"
+          :value="c"
+          @input="onInput(i, $event)"
+        >
+      </div>
 
-            <div class="flex gap-2">
-                <input v-for="(c, i) in code" :key="i" :id="`code-${i}`" type="text" maxlength="1"
-                    class="w-12 h-12 text-center border border-gray-300 rounded" :value="c"
-                    @input="onInput(i, $event)" />
-            </div>
-
-            <form @submit.prevent='validateCode'>
-                <GenericButton title="Validate code" />
-            </form>
-            <router-link to='login' class=" font-medium text-[12px]">Did not recieve the code? Send again.</router-link>
-
-        </div>
+      <form @submit.prevent="validateCode">
+        <GenericButton title="Validate code" />
+      </form>
+      <router-link
+        to="login"
+        class=" font-medium text-[12px]"
+      >
+        Did not recieve the code? Send again.
+      </router-link>
     </div>
-
-
+  </div>
 </template>

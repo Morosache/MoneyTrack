@@ -11,8 +11,11 @@ const returnToLog = () => {
 </script>
 
 <template>
-    <div class="w-screen h-screen flex flex-col justify-center items-center">
-        <PageTitle title="Password has been reset" />
-        <GenericButton @click="returnToLog" title="Go back to Log In" />
-    </div>
+  <div class="w-screen h-screen flex flex-col justify-center items-center">
+    <PageTitle title="Password has been reset" />
+    <GenericButton
+      title="Go back to Log In"
+      @click="returnToLog"
+    />
+  </div>
 </template>

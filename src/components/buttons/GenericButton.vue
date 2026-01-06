@@ -13,8 +13,10 @@ defineProps({
 </script>
 
 <template>
-    <button type="submit"
-        :class= customClass>
-        {{ title }}
-    </button>
+  <button
+    type="submit"
+    :class="customClass"
+  >
+    {{ title }}
+  </button>
 </template>

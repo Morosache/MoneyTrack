@@ -23,10 +23,18 @@ const showPassword = ref(false)
 
 <template>
   <div class="relative">
-    <input :id="id" :type="showPassword ? 'text' : 'password'" :placeholder="placeholder" :class="className"
-      v-model="password" />
-    <button type="button" @click="showPassword = !showPassword"
-      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 text-sm">
+    <input
+      :id="id"
+      v-model="password"
+      :type="showPassword ? 'text' : 'password'"
+      :placeholder="placeholder"
+      :class="className"
+    >
+    <button
+      type="button"
+      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-600 text-sm"
+      @click="showPassword = !showPassword"
+    >
       {{ showPassword ? 'Hide' : 'Show' }}
     </button>
   </div>
