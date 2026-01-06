@@ -16,8 +16,8 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: "Task List",
-        short_name: "Task List",
+        name: "MoneyTrack",
+        short_name: "MoneyTrack",
         theme_color: "#1976d2",
         background_color: "#fafafa",
         display: "standalone",
