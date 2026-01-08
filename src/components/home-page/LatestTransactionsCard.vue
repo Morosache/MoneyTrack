@@ -26,7 +26,7 @@ const latestTransactions = computed(() => {
 <template>
   <div
     id="latest-transaction"
-    class="bg-white w-[550px] rounded-[10px] max-h-[300px] overflow-y-auto"
+    class="bg-white w-[550px] rounded-[10px] max-h-[400px] overflow-y-auto"
   >
     <div
       id="transaction-card-upper"

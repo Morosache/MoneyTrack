@@ -1,5 +1,6 @@
 <script setup>
 import { Pencil } from 'lucide-vue-next'
+import { Trash } from 'lucide-vue-next'
 defineProps({
     incomes: {
         type: Array,
@@ -19,7 +20,7 @@ defineProps({
       </h1>
 
       <div class="grid grid-cols-1 mt-2 max-h-[250px] overflow-y-auto ">
-        <div class="grid grid-cols-5 border-b border-t border-gray-300 p-3 text-center items-center">
+        <div class="grid grid-cols-6 border-b border-t border-gray-300 p-3 text-center items-center">
           <p class="text-[14px] font-semibold">
             Source
           </p>
@@ -36,7 +37,7 @@ defineProps({
         <div
           v-for="income in incomes"
           :key="income.id"
-          class="grid grid-cols-5 border-b border-gray-300 p-3 text-center items-center"
+          class="grid grid-cols-6 border-b border-gray-300 p-3 text-center items-center"
         >
           <p>{{ income.source }}</p>
           <p class="font-semibold">
@@ -44,7 +45,8 @@ defineProps({
           </p>
           <p>{{ income.category }}</p>
           <p>{{ income.observations }}</p>
-          <Pencil class="w-[15px] h-[15px] justify-self-end mr-[20px]" />
+          <Pencil class="w-[15px] h-[15px] justify-self-end" />
+          <Trash class="w-[15px] h-[15px] justify-self-end mr-[20px]" />
         </div>
       </div>
     </div>
