@@ -6,7 +6,7 @@
 
     import { X } from 'lucide-vue-next'
     import { useTransaction } from '@/stores/transactionsStore';
-    import { ref } from 'vue'
+    import { ref, watch } from 'vue'
 
     const transactionStore = useTransaction();
     const emit = defineEmits(['close']);
@@ -27,8 +27,11 @@
     }
 })
 
-    const transactionData = transactionStore.transactions.find( transaction => transaction.id = props.transactionId);
-    const updatedTransactionData = ref({ ...transactionData})
+    const updatedTransactionData = ref({ ...props.transaction})
+
+    watch(() => props.transaction, (newVal) => {
+      updatedTransactionData.value = { ...newVal }
+    }, {deep: true})
 
     const editTransaction = () => {
         transactionStore.editTransaction(props.transactionId, updatedTransactionData.value)

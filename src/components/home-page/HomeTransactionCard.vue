@@ -62,10 +62,14 @@ const isEditModalOpen = ref(false);
     </button>
 
     <Teleport to="body">
-      <EditTransactionModal
-        v-if="isEditModalOpen"
-        @close="isEditModalOpen = false"
-      />
+      <Teleport to="body">
+    <EditTransactionModal
+    v-if="isEditModalOpen"
+      :transaction="transaction" 
+      :transactionId="transactionId"
+      @close="isEditModalOpen = false"
+  />
+</Teleport>
     </Teleport>
   
     <button

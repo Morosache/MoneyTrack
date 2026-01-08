@@ -40,8 +40,8 @@ const latestTransactions = computed(() => {
     <div class="flex flex-col ">
       <div>
         <HomeTransactionCard
-          v-for="(transaction, index) in latestTransactions"
-          :key="index"
+          v-for="transaction in latestTransactions"
+          :key="transaction.id"
           :transaction="transaction"
           :transactionId="transaction.id"
         />

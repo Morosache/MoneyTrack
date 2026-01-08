@@ -21,12 +21,15 @@ export const useTransaction = defineStore('transaction', {
         },
 
         editTransaction(id, updatedTransaction) {
-            const index = this.transactions.findIndex(transaction => transaction.id === id);
-            if(index != -1) {
-                this.transactions[index] = {...updatedTransaction, id}
-            }
-        },
-
+            this.transactions = this.transactions.map(transaction =>{
+                 if(transaction.id === id){
+                    return { ...updatedTransaction, id};
+                 }
+                 else {
+                    return transaction;
+                 }
+            })
         }
+    }
     }
 )
