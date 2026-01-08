@@ -1,11 +1,20 @@
 <script setup>
 import { Pencil } from 'lucide-vue-next'
 import { Trash } from 'lucide-vue-next'
-defineProps({
+import { computed } from 'vue'
+import { useIncome } from '@/stores/incomeStore.js'
+
+const incomeStore = useIncome();
+
+const props = defineProps({
     incomes: {
         type: Array,
         required: true
     }
+})
+
+const latestIncome = computed(() => {
+  return[...props.incomes].reverse()
 })
 </script>
 
@@ -35,18 +44,20 @@ defineProps({
           </p>
         </div>
         <div
-          v-for="income in incomes"
+          v-for="income in latestIncome"
           :key="income.id"
           class="grid grid-cols-6 border-b border-gray-300 p-3 text-center items-center"
         >
           <p>{{ income.source }}</p>
           <p class="font-semibold">
-            ${{ income.amount }}
+            {{ income.amount }}
           </p>
           <p>{{ income.category }}</p>
-          <p>{{ income.observations }}</p>
+          <p>{{ income.observation }}</p>
           <Pencil class="w-[15px] h-[15px] justify-self-end" />
+          <button @click="incomeStore.removeIncome(income.id)">
           <Trash class="w-[15px] h-[15px] justify-self-end mr-[20px]" />
+          </button>
         </div>
       </div>
     </div>

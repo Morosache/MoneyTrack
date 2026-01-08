@@ -1,32 +1,26 @@
 <script setup>
 import { ref } from 'vue'
 import GenericButton from '../buttons/GenericButton.vue';
+import { useIncome } from '@/stores/incomeStore.js'
 
-const emit = defineEmits(['submitForm'])
+const incomeStore = useIncome();
 
-const incomeAmount = ref('')
-const incomeCategory = ref('')
-const incomeSource = ref('')
-const incomeObservations = ref('')
+const incomeData = ref({
+  amount:0,
+  category:'',
+  source:'',
+  observation:'',
+})
 
 const handleNewIncome = () => {
-    if (!incomeAmount.value || !incomeCategory.value || !incomeSource.value) {
-        alert("Fields cannot be empty!")
-        return
-    }
+  incomeStore.addIncome({...incomeData.value});
 
-    emit('submitForm' , {
-        id: Date.now(),
-        amount: parseFloat(incomeAmount.value),
-        category: incomeCategory.value,
-        source: incomeSource.value,
-        observations: incomeObservations.value,
-    })
-
-    incomeAmount.value = ''
-    incomeCategory.value = ''
-    incomeSource.value = ''
-    incomeObservations.value = ''
+  incomeData.value = {
+  amount:0,
+  category:'',
+  source:'',
+  observation:'',
+}
 }
 </script>
 
@@ -42,12 +36,12 @@ const handleNewIncome = () => {
 
       <form
         class="mx-[20px] my-[4px]"
-        @submit.prevent="handleNewIncome"
+        @submit.prevent
       >
         <div class="my-[5px] flex justify-center items-center flex-row gap-1">
           <input
             id="income-amount-input"
-            v-model="incomeAmount"
+            v-model="incomeData.amount"
             type="number"
             placeholder="Amount"
             step=".01"
@@ -55,7 +49,7 @@ const handleNewIncome = () => {
           >
 
           <select
-            v-model="incomeCategory"
+            v-model="incomeData.category"
             class="w-1/3 h-[45px] border border-gray-300 rounded-lg px-3 focus:outline-none text-gray-700"
           >
             <option
@@ -76,7 +70,7 @@ const handleNewIncome = () => {
           </select>
 
           <select
-            v-model="incomeSource"
+            v-model="incomeData.source"
             class="w-1/3 h-[45px] border border-gray-300 rounded-lg px-3 focus:outline-none text-gray-700"
           >
             <option
@@ -101,14 +95,15 @@ const handleNewIncome = () => {
         </div>
 
         <textarea
-          v-model="incomeObservations"
+          v-model="incomeData.observation"
           placeholder="Observations"
           class="w-full h-[130px] border border-gray-300 rounded-lg px-3 py-2 focus:outline-none text-gray-700 resize-none align-top"
         />
         <div class="w-full h-full flex justify-center mt-[10px]">
           <GenericButton
             title="Add income"
-            custom-class="w-[150px] px-[10px] py-[2px] bg-[#56d788] rounded-lg font-semibold"
+            custom-class="w-[150px] px-[10px] py-[2px] bg-[#56d788] rounded-lg font-semibold hover:bg-[#4cc179] cursor-pointer"
+            @click="handleNewIncome"
           />
         </div>
       </form>

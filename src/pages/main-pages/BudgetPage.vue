@@ -1,15 +1,12 @@
 <script setup>
-import { ref } from 'vue'
 import AddBudgetCard from '@/components/budget-page/AddBudgetCard.vue';
 import BudgetStatisticsCard from '@/components/budget-page/BudgetStatisticsCard.vue';
 import LatestBudgetCard from '@/components/budget-page/LatestBudgetCard.vue';
 import TopHomeBar from '@/components/home-page/TopHomeBar.vue';
+import { useIncome } from '@/stores/incomeStore.js'
 
-const incomes = ref([])
+const incomeStore = useIncome();
 
-function handleSubmit(data) {
-    incomes.value.unshift(data)
-}
 </script>
 
 <template>
@@ -17,8 +14,8 @@ function handleSubmit(data) {
     <TopHomeBar />
     <div class="flex flex-row ml-[185px] justify-center items-center flex-wrap mt-[10px]">
       <div class=" flex flex-col justify-between items-center">
-        <AddBudgetCard @submit-form="handleSubmit" />
-        <LatestBudgetCard :incomes="incomes" />
+        <AddBudgetCard />
+        <LatestBudgetCard :incomes="incomeStore.incomes" />
       </div>
       <BudgetStatisticsCard />
     </div>

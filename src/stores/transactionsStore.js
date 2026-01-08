@@ -13,7 +13,6 @@ export const useTransaction = defineStore('transaction', {
                 ...transaction,
                 id: this.nextId++
             })
-            console.log(transaction)
         },
 
         removeTransaction(id) {

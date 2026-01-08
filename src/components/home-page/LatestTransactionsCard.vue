@@ -2,8 +2,10 @@
 import { History } from 'lucide-vue-next';
 import HomeTransactionCard from './HomeTransactionCard.vue';
 import { useTransaction } from '@/stores/transactionsStore';
+import { useIncome } from '@/stores/incomeStore';
 import { computed } from 'vue'
 const transactionStore = useTransaction();
+const incomeStore = useIncome(); 
 import { useRoute } from 'vue-router'
 
 const route = useRoute();
@@ -14,10 +16,12 @@ const props = defineProps ({
 
 const latestTransactions = computed(() => {
   if(route.path ==='/home-page'){
-  return [...transactionStore.transactions].reverse().slice(0,3)
+    return [...transactionStore.transactions].reverse().slice(0,3)
   }
-  else {
-  return [...transactionStore.transactions].reverse()
+  else if(route.path === '/budget-page'){
+    return [...incomeStore.incomes].reverse()
+  } else {
+    return [...transactionStore.transactions].reverse()
   }
 })
 
@@ -38,12 +42,20 @@ const latestTransactions = computed(() => {
       </router-link>
     </div>
     <div class="flex flex-col ">
-      <div>
+      <div v-if="route != 'budget-page'">
         <HomeTransactionCard
           v-for="transaction in latestTransactions"
           :key="transaction.id"
           :transaction="transaction"
           :transactionId="transaction.id"
+        />
+      </div>
+      <div v-else>
+        <HomeTransactionCard
+          v-for="income in latestTransactions"
+          :key="income.id"
+          :transaction="income"
+          :transactionId="income.id"
         />
       </div>
     </div>
