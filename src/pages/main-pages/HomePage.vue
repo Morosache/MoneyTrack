@@ -13,7 +13,7 @@ import TopHomeBar from '@/components/home-page/TopHomeBar.vue';
     <div class="flex justify-center items-center flex-wrap ml-[200px] mb-[50px]">
       <div class=" flex flex-row gap-25 justify-between items-center mx-[40px] my-[40px]">
         <NewTransactionCard />
-        <LatestTransactionsCard />
+        <LatestTransactionsCard title="Latest Transactions" />
       </div>
       <StatisticsCard />
     </div>

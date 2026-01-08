@@ -12,7 +12,7 @@ export const useTransaction = defineStore('transaction', {
         },
 
         removeTransaction(id) {
-            this.transactions.splice(this.transactions.findIndex(transactions => transactions.id ===  id));
+            this.transactions.splice(this.transactions.findIndex(transactions => transactions.id ===  id), 1)
         },
 
         editTransaction(id, updatedTransaction) {

@@ -32,6 +32,7 @@
 
     const editTransaction = () => {
         transactionStore.editTransaction(props.transactionId, updatedTransactionData.value)
+        console.log(props.transactionId)
         emit('close')
     }
 

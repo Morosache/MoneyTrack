@@ -4,9 +4,21 @@ import HomeTransactionCard from './HomeTransactionCard.vue';
 import { useTransaction } from '@/stores/transactionsStore';
 import { computed } from 'vue'
 const transactionStore = useTransaction();
+import { useRoute } from 'vue-router'
+
+const route = useRoute();
+
+const props = defineProps ({
+  title: String
+})
 
 const latestTransactions = computed(() => {
+  if(route.path ==='/home-page'){
   return [...transactionStore.transactions].reverse().slice(0,3)
+  }
+  else {
+  return [...transactionStore.transactions].reverse()
+  }
 })
 
 </script>
@@ -14,13 +26,13 @@ const latestTransactions = computed(() => {
 <template>
   <div
     id="latest-transaction"
-    class="bg-white w-[550px] rounded-[10px]"
+    class="bg-white w-[550px] rounded-[10px] max-h-[300px] overflow-y-auto"
   >
     <div
       id="transaction-card-upper"
       class="flex flex-row justify-between items-center h-[40px]"
     >
-      <span class="font-semibold ml-[30px] text-[15px]">Latest Transactions</span>
+      <span class="font-semibold ml-[30px] text-[15px]">{{ title }}</span>
       <router-link to="/transactions-page">
         <History class="mr-[30px] w-[20px] h-[20px]" />
       </router-link>
@@ -31,7 +43,7 @@ const latestTransactions = computed(() => {
           v-for="(transaction, index) in latestTransactions"
           :key="index"
           :transaction="transaction"
-          :task-id="transaction.id"
+          :transactionId="transaction.id"
         />
       </div>
     </div>

@@ -17,7 +17,7 @@
 
 
     const transactionData = ref({
-        id: 0,
+        id: Math.floor(Math.random(10000)),
         date:'',
         name:'',
         price: 0,

@@ -14,7 +14,7 @@ const economiesBudget = ref('$28,543.92')
 <template>
   <div
     id="top-budget-bar"
-    class="ml-[200px] p-[36px] bg-[#FFFFFF]"
+    class="ml-[200px] p-[30px] bg-[#FFFFFF]"
   >
     <div class="flex justify-between items-center mx-[20px]">
       <div class="flex flex-row gap-1">
